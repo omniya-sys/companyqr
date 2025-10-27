@@ -35,14 +35,87 @@ body { background-color: var(--bg); color: var(--btn); display:flex; justify-con
   position:relative;
 }
 
-<section class="banner">
-  <!-- Banner Image -->
-  <img src="banner.jpg" alt="Banner" class="banner-img">
-
-  <!-- CEO Profile -->
-  <div class="profile-wrapper">
-    <img src="ceo.webp" alt="CEO Photo" class="profile">
+<section class="banner-section">
+  <!-- Banner -->
+  <div class="banner">
+    <img src="banner.jpg" alt="Banner Image" class="banner-img">
+    
+    <!-- CEO Profile (نصها فوق البنر) -->
+    <div class="profile-wrapper">
+      <img src="ceo.webp" alt="CEO Photo" class="profile">
+    </div>
   </div>
+
+  <!-- Name and Description -->
+  <div class="name">WALEED ELERKSOSY</div>
+  <div class="desc">Your OEM Partner for AI & Smart Systems</div>
+
+  <!-- Buttons -->
+  <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
+    <img src="whatsapp.png" alt=""> WhatsApp
+  </a>
+
+  <a class="btn" href="mailto:waleed@goldendeveloper.net">
+    <img src="email.png" alt=""> Email
+  </a>
+
+  <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
+    <img src="pdf.png" alt=""> PDF
+  </a>
+
+  <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
+    <img src="pin.png" alt=""> Attachment
+  </a>
+
+  <a class="btn" href="https://goldendeveloper.net/" target="_blank">
+    <img src="website.png" alt=""> Website
+  </a>
+</section>
+
+<style>
+.banner-section {
+  width: 95%;
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CEO Profile */
+.profile-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #FAFAFA;
+  position: absolute;
+  left: 50%;
+  bottom: -65px; /* نصف الصورة خارج البنر */
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* Name & Description */
 .name { margin-top:80px; font-size:1.8rem; font-weight:700; color:var(--btn); }
@@ -104,6 +177,7 @@ body { background-color: var(--bg); color: var(--btn); display:flex; justify-con
 
 </body>
 </html>
+
 
 
 
