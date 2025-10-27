@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Company QR Landing Page</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -20,22 +19,11 @@
 
 body { 
   background-color: var(--bg); 
-  color: var(--btn); 
   display:flex; 
   justify-content:center; 
-  align-items:flex-start; 
-  padding-top:40px; 
+  align-items:center; 
   min-height:100vh;
 }
-
-.splash {
-  position: fixed; top:0; left:0; width:100%; height:100%;
-  background: var(--bg); display:flex; justify-content:center; align-items:center;
-  animation: fadeOut 2s ease 2s forwards;
-  z-index: 1000;
-}
-.splash img { width:200px; height:auto; }
-@keyframes fadeOut { to { opacity:0; visibility:hidden; } }
 
 .container {
   display:flex;
@@ -43,22 +31,15 @@ body {
   align-items:center;
   text-align:center;
   width:95%;
-  max-width:600px;
-  position:relative;
-}
-
-.banner-section {
-  width: 100%;
-  position: relative;
-  margin-top: 20px;
+  max-width:400px; /* عريضة في النص */
 }
 
 .banner {
   width: 100%;
-  height: 220px;
+  height: 180px;
   border-radius: 12px;
   overflow: hidden;
-  position: relative;
+  margin-bottom: 60px; /* مساحة فوق الصورة */
 }
 
 .banner img {
@@ -69,13 +50,12 @@ body {
 }
 
 .profile-wrapper {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 4px solid var(--btn);
   overflow: hidden;
-  position: relative;
-  margin-top: -65px;
+  margin-top: -75px; /* نص الصورة فوق البنر */
   z-index: 2;
 }
 
@@ -86,100 +66,105 @@ body {
 }
 
 .name {
-  margin-top:20px; 
-  font-size:1.8rem;
-  font-weight:700;
-  color:var(--btn);
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--btn);
 }
+
 .desc {
-  font-size:1rem;
-  color:#ccc;
-  margin:10px 0 20px;
-  max-width:320px;
+  font-size: 1rem;
+  color: #ccc;
+  margin: 10px 0 30px;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  margin-top:20px;
-  width:100%;
+  width: 100%;
 }
 
 .btn {
   display:flex;
   align-items:center;
-  justify-content:center;
-  width:220px;
-  margin:10px 0;
-  background:var(--btn);
-  color:var(--text);
-  text-decoration:none;
-  padding:12px 20px;
-  border-radius:40px;
-  font-weight:600;
-  transition:all 0.3s ease;
-  box-shadow:0 2px 6px rgba(255,255,255,0.1);
+  justify-content:flex-start; /* الأيقونات على الشمال */
+  width:100%; /* عريض */
+  max-width:300px;
+  margin:8px 0;
+  background: var(--btn);
+  color: var(--text);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.1);
 }
-.btn img { width:22px; height:22px; margin-right:10px; }
-.btn:hover { transform:scale(1.03); opacity:0.9; }
+
+.btn img {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
 
 @media (max-width:600px){
-  .banner { height:160px; }
-  .profile-wrapper { width:100px; height:100px; margin-top:-50px; }
-  .name { font-size:1.5rem; }
-  .desc { font-size:0.9rem; max-width:260px; }
-  .btn { width:180px; font-size:0.9rem; }
-  .btn img { width:20px; height:20px; }
+  .container { max-width:90%; }
+  .banner { height:140px; margin-bottom:50px; }
+  .profile-wrapper { width:120px; height:120px; margin-top:-60px; }
+  .name { font-size:1.6rem; }
+  .desc { font-size:0.9rem; margin-bottom:20px; }
+  .btn { max-width:90%; font-size:0.9rem; }
+  .btn img { width:20px; height:20px; margin-right:10px; }
 }
 </style>
 </head>
 <body>
 
-<div class="splash">
-  <img src="splash.png" alt="Splash Logo">
-</div>
-
 <div class="container">
-  <div class="banner-section">
-    <div class="banner">
-      <img src="banner.png" alt="Banner Image">
-    </div>
+  <div class="banner">
+    <img src="banner.png" alt="Banner">
+  </div>
 
-    <div class="profile-wrapper">
-      <img src="ceo.webp" alt="CEO Photo">
-    </div>
+  <div class="profile-wrapper">
+    <img src="ceo.webp" alt="CEO Photo">
+  </div>
 
-    <div class="name">WALEED ELERKSOSY</div>
-    <div class="desc">Your OEM Partner for AI & Smart Systems</div>
+  <div class="name">WALEED ELERKSOSY</div>
+  <div class="desc">Your OEM Partner for AI & Smart Systems</div>
 
-    <div class="buttons-container">
-      <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
-        <img src="whatsapp.png" alt=""> WhatsApp
-      </a>
+  <div class="buttons-container">
+    <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
+      <img src="whatsapp.png" alt=""> WhatsApp
+    </a>
 
-      <a class="btn" href="mailto:waleed@goldendeveloper.net">
-        <img src="email.png" alt=""> Email
-      </a>
+    <a class="btn" href="mailto:waleed@goldendeveloper.net">
+      <img src="email.png" alt=""> Email
+    </a>
 
-      <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
-        <img src="pdf.png" alt=""> PDF
-      </a>
+    <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
+      <img src="pdf.png" alt=""> PDF
+    </a>
 
-      <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
-        <img src="pin.png" alt=""> Attachment
-      </a>
+    <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
+      <img src="pin.png" alt=""> Attachment
+    </a>
 
-      <a class="btn" href="https://goldendeveloper.net/" target="_blank">
-        <img src="website.png" alt=""> Website
-      </a>
-    </div>
+    <a class="btn" href="https://goldendeveloper.net/" target="_blank">
+      <img src="website.png" alt=""> Website
+    </a>
   </div>
 </div>
 
 </body>
 </html>
+
+
 
 
 
