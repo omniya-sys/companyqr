@@ -13,45 +13,30 @@
     --font-sans: "Poppins", sans-serif;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-sans); }
-  body {
-    background-color: var(--bg);
-    color: var(--btn);
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-  }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:var(--font-sans); }
+  body { background-color: var(--bg); color: var(--btn); display:flex; justify-content:center; padding-top:40px; }
 
   /* Splash */
   .splash {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--bg); display: flex; justify-content: center; align-items: center;
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: var(--bg); display:flex; justify-content:center; align-items:center;
+    animation: fadeOut 2s ease 2s forwards;
     z-index: 1000;
   }
-  .splash img { width: 200px; height: auto; }
+  .splash img { width:200px; height:auto; }
+  @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
 
   /* Container */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 95%;
-    max-width: 600px;
-    position: relative;
-  }
+  .container { display:flex; flex-direction:column; align-items:center; text-align:center; width:95%; max-width:600px; position:relative; }
 
   /* Banner */
   .banner {
-    width: 100%;
-    height: 200px;
+    width:100%; height:200px;
     background-image: url('banner.png');
     background-size: cover;
     background-position: center;
-    border-radius: 14px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+    border-radius:14px;
+    position:relative; z-index:1; overflow:visible;
   }
 
   /* CEO Image */
@@ -59,95 +44,72 @@
     position:absolute; left:50%; transform:translateX(-50%);
     top:50%; width:130px; height:130px; border-radius:50%;
     border:4px solid var(--btn); object-fit:cover; z-index:2;
-    margin-top:30px;
+    margin-top:30px; /* الجزء الخارج من البنر */
   }
 
   /* Name & Description */
-  .name { margin-top: 80px; font-size: 1.8rem; font-weight: 700; color: var(--btn); }
-  .desc { font-size: 1rem; color: #ccc; margin: 8px 0 20px; font-weight: 400; }
+  .name { margin-top:80px; font-size:1.8rem; font-weight:700; color:var(--btn); }
+  .desc { font-size:1rem; color:#ccc; margin:10px 0 25px; max-width:320px; }
 
   /* Buttons */
   .btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 85%;
-    max-width: 300px;
-    margin: 8px 0;
-    background: var(--btn);
-    color: var(--text);
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 40px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:flex-start;
+    width:85%; max-width:300px; margin:8px 0; background:var(--btn);
+    color:var(--text); text-decoration:none; padding:12px 20px; border-radius:40px;
+    font-weight:600; transition:all 0.3s ease; box-shadow:0 2px 6px rgba(255,255,255,0.1);
   }
-  .btn img { width: 22px; height: 22px; margin-right: 15px; }
-  .btn:hover { transform: scale(1.03); opacity: 0.9; }
+  .btn img { width:22px; height:22px; margin-right:10px; }
+  .btn:hover { transform:scale(1.03); opacity:0.9; }
 
-  @media (max-width: 600px) {
-    .banner { height: 150px; }
-    .profile { width: 100px; height: 100px; bottom: -50px; }
-    .name { font-size: 1.5rem; }
-    .desc { font-size: 0.9rem; }
-    .btn { width: 90%; font-size: 0.9rem; }
-    .btn img { width: 20px; height: 20px; }
+  @media (max-width:600px){
+    .banner { height:160px; }
+    .profile { width:100px; height:100px; margin-top:20px; }
+    .name { font-size:1.5rem; }
+    .desc { font-size:0.9rem; max-width:260px; }
+    .btn { width:90%; font-size:0.9rem; }
+    .btn img { width:20px; height:20px; }
   }
 </style>
 </head>
 <body>
 
 <!-- Splash -->
-<div class="splash" id="splash">
+<div class="splash">
   <img src="splash.png" alt="Splash Logo">
 </div>
 
+<!-- Main Content -->
 <div class="container">
-  <!-- Banner -->
   <div class="banner"></div>
-  <!-- CEO Circle -->
   <img src="ceo.webp" alt="CEO Photo" class="profile">
-  <!-- Name & Description -->
+
   <div class="name">WALEED ELERKSOSY</div>
   <div class="desc">Your OEM Partner for AI & Smart Systems</div>
 
-  <!-- Buttons -->
-  <a class="btn" id="whatsapp">
+  <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
     <img src="whatsapp.png" alt=""> WhatsApp
   </a>
-  <a class="btn" href="mailto:waleed@goldendeveloper.net" target="_blank">
+
+  <a class="btn" href="mailto:waleed@goldendeveloper.net">
     <img src="email.png" alt=""> Email
   </a>
+
   <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
     <img src="pdf.png" alt=""> PDF
   </a>
+
   <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
     <img src="pin.png" alt=""> Attachment
   </a>
+
   <a class="btn" href="https://goldendeveloper.net/" target="_blank">
     <img src="website.png" alt=""> Website
   </a>
 </div>
 
-<script>
-  // Hide Splash after 2 seconds
-  setTimeout(() => { document.getElementById('splash').style.display = 'none'; }, 2000);
-
-  // WhatsApp Smart Link
-  const whatsappBtn = document.getElementById("whatsapp");
-  const phone = "393896192147";
-  const message = "Hello Waleed, I'm interested in your solutions.";
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  const link = isMobile
-    ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`
-    : `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-  whatsappBtn.href = link;
-  whatsappBtn.target = "_blank";
-</script>
-
 </body>
 </html>
+
 
 
 
