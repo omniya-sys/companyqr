@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Company QR Landing Page</title>
+
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --bg: #000000;
@@ -14,6 +17,7 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; font-family:var(--font-sans); }
+
 body { background-color: var(--bg); color: var(--btn); display:flex; justify-content:center; padding-top:40px; }
 
 .splash {
@@ -35,77 +39,39 @@ body { background-color: var(--bg); color: var(--btn); display:flex; justify-con
   position:relative;
 }
 
-<section class="banner-section">
-  <!-- Banner -->
-  <div class="banner">
-    <img src="banner.jpg" alt="Banner Image" class="banner-img">
-    
-    <!-- CEO Profile (نصها فوق البنر) -->
-    <div class="profile-wrapper">
-      <img src="ceo.webp" alt="CEO Photo" class="profile">
-    </div>
-  </div>
-
-  <!-- Name and Description -->
-  <div class="name">WALEED ELERKSOSY</div>
-  <div class="desc">Your OEM Partner for AI & Smart Systems</div>
-
-  <!-- Buttons -->
-  <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
-    <img src="whatsapp.png" alt=""> WhatsApp
-  </a>
-
-  <a class="btn" href="mailto:waleed@goldendeveloper.net">
-    <img src="email.png" alt=""> Email
-  </a>
-
-  <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
-    <img src="pdf.png" alt=""> PDF
-  </a>
-
-  <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
-    <img src="pin.png" alt=""> Attachment
-  </a>
-
-  <a class="btn" href="https://goldendeveloper.net/" target="_blank">
-    <img src="website.png" alt=""> Website
-  </a>
-</section>
-
-<style>
+/* Banner Section */
 .banner-section {
-  width: 95%;
-  max-width: 600px;
-  margin: 40px auto 0;
-  text-align: center;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
 }
 
 /* Banner */
 .banner {
-  position: relative;
   width: 100%;
   height: 220px;
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
 }
 
-.banner-img {
+.banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* CEO Profile */
+/* CEO Profile (نصها فوق البنر) */
 .profile-wrapper {
   width: 130px;
   height: 130px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #FAFAFA;
+  border: 4px solid var(--btn);
   position: absolute;
   left: 50%;
-  bottom: -65px; /* نصف الصورة خارج البنر */
+  bottom: -65px; /* نص الصورة خارج البنر */
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -114,26 +80,46 @@ body { background-color: var(--bg); color: var(--btn); display:flex; justify-con
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* Name & Description */
-.name { margin-top:80px; font-size:1.8rem; font-weight:700; color:var(--btn); }
-.desc { font-size:1rem; color:#ccc; margin:10px 0 25px; max-width:320px; }
+.name {
+  margin-top:80px; /* قريب من الدايرة */
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--btn);
+}
+.desc {
+  font-size:1rem;
+  color:#ccc;
+  margin:10px 0 25px;
+  max-width:320px;
+}
 
 /* Buttons */
 .btn {
-  display:flex; align-items:center; justify-content:flex-start;
-  width:85%; max-width:300px; margin:8px 0; background:var(--btn);
-  color:var(--text); text-decoration:none; padding:12px 20px; border-radius:40px;
-  font-weight:600; transition:all 0.3s ease; box-shadow:0 2px 6px rgba(255,255,255,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:flex-start; /* الأيقونات على الشمال */
+  width:90%;
+  max-width:300px;
+  margin:8px 0;
+  background:var(--btn);
+  color:var(--text);
+  text-decoration:none;
+  padding:12px 20px;
+  border-radius:40px;
+  font-weight:600;
+  transition:all 0.3s ease;
+  box-shadow:0 2px 6px rgba(255,255,255,0.1);
 }
 .btn img { width:22px; height:22px; margin-right:10px; }
 .btn:hover { transform:scale(1.03); opacity:0.9; }
 
+/* Responsive */
 @media (max-width:600px){
   .banner { height:160px; }
-  .profile { width:100px; height:100px; bottom:-50px; }
+  .profile-wrapper { width:100px; height:100px; bottom:-50px; }
   .name { font-size:1.5rem; }
   .desc { font-size:0.9rem; max-width:260px; }
   .btn { width:90%; font-size:0.9rem; }
@@ -143,42 +129,50 @@ body { background-color: var(--bg); color: var(--btn); display:flex; justify-con
 </head>
 <body>
 
+<!-- Splash Screen -->
 <div class="splash">
   <img src="splash.png" alt="Splash Logo">
 </div>
 
 <div class="container">
-  <div class="banner"></div>
-  <img src="ceo.webp" alt="CEO Photo" class="profile">
+  <!-- Banner Section -->
+  <div class="banner-section">
+    <div class="banner">
+      <img src="banner.png" alt="Banner Image">
+      <div class="profile-wrapper">
+        <img src="ceo.webp" alt="CEO Photo">
+      </div>
+    </div>
 
-  <div class="name">WALEED ELERKSOSY</div>
-  <div class="desc">Your OEM Partner for AI & Smart Systems</div>
+    <!-- Name and Description -->
+    <div class="name">WALEED ELERKSOSY</div>
+    <div class="desc">Your OEM Partner for AI & Smart Systems</div>
 
-  <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
-    <img src="whatsapp.png" alt=""> WhatsApp
-  </a>
+    <!-- Buttons -->
+    <a class="btn" href="https://api.whatsapp.com/send?phone=393896192147&text=Hello%20Waleed%2C%20I%27m%20interested%20in%20your%20solutions." target="_blank">
+      <img src="whatsapp.png" alt=""> WhatsApp
+    </a>
 
-  <a class="btn" href="mailto:waleed@goldendeveloper.net">
-    <img src="email.png" alt=""> Email
-  </a>
+    <a class="btn" href="mailto:waleed@goldendeveloper.net">
+      <img src="email.png" alt=""> Email
+    </a>
 
-  <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
-    <img src="pdf.png" alt=""> PDF
-  </a>
+    <a class="btn" href="https://goldendeveloper.net/media/Consulente_Software_&_AI.pdf" target="_blank">
+      <img src="pdf.png" alt=""> PDF
+    </a>
 
-  <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
-    <img src="pin.png" alt=""> Attachment
-  </a>
+    <a class="btn" href="https://goldendeveloper.net/Waleed.Elerksosy_CV.IT.pdf" target="_blank">
+      <img src="pin.png" alt=""> Attachment
+    </a>
 
-  <a class="btn" href="https://goldendeveloper.net/" target="_blank">
-    <img src="website.png" alt=""> Website
-  </a>
+    <a class="btn" href="https://goldendeveloper.net/" target="_blank">
+      <img src="website.png" alt=""> Website
+    </a>
+  </div>
 </div>
 
 </body>
 </html>
-
-
 
 
 
