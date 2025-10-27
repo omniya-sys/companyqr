@@ -31,31 +31,32 @@ body {
   align-items:center;
   text-align:center;
   width:95%;
-  max-width:400px; /* عريضة في النص */
+  max-width:400px;
 }
 
+/* Banner */
 .banner {
   width: 100%;
-  height: 180px;
+  height: 150px;
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 60px; /* مساحة فوق الصورة */
+  margin-bottom: 0px;
 }
 
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
+/* Profile Image */
 .profile-wrapper {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 4px solid var(--btn);
   overflow: hidden;
-  margin-top: -75px; /* نص الصورة فوق البنر */
+  margin-top: -70px; /* نص الصورة فوق البنر */
   z-index: 2;
 }
 
@@ -65,57 +66,60 @@ body {
   object-fit: cover;
 }
 
+/* Name & Description */
 .name {
-  margin-top: 20px;
-  font-size: 2rem;
-  font-weight: 700;
+  margin-top:20px;
+  font-size:2rem;
+  font-weight:700;
   color: var(--btn);
 }
 
 .desc {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 10px 0 30px;
+  font-size:1rem;
+  color:#ccc;
+  margin:10px 0 30px;
 }
 
+/* Buttons */
 .buttons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
 }
 
 .btn {
   display:flex;
   align-items:center;
   justify-content:flex-start; /* الأيقونات على الشمال */
-  width:100%; /* عريض */
+  width:100%;
   max-width:300px;
+  padding:14px 20px;
   margin:8px 0;
-  background: var(--btn);
-  color: var(--text);
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 40px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+  background:var(--btn);
+  color:var(--text);
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  box-shadow:0 2px 6px rgba(255,255,255,0.1);
+  transition:all 0.3s ease;
 }
 
 .btn img {
-  width: 22px;
-  height: 22px;
-  margin-right: 12px;
+  width:22px;
+  height:22px;
+  margin-right:12px;
 }
 
 .btn:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
+  transform:scale(1.03);
+  opacity:0.9;
 }
 
-@media (max-width:600px){
+/* Responsive */
+@media(max-width:600px){
   .container { max-width:90%; }
-  .banner { height:140px; margin-bottom:50px; }
+  .banner { height:120px; }
   .profile-wrapper { width:120px; height:120px; margin-top:-60px; }
   .name { font-size:1.6rem; }
   .desc { font-size:0.9rem; margin-bottom:20px; }
@@ -163,6 +167,7 @@ body {
 
 </body>
 </html>
+
 
 
 
